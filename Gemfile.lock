@@ -1,3 +1,9 @@
+PATH
+  remote: /Users/rmadsen/Projects/devise_capturable
+  specs:
+    devise_capturable (0.0.1)
+      httparty
+
 GEM
   remote: https://rubygems.org/
   specs:
@@ -66,6 +72,9 @@ GEM
       factory_girl (~> 4.2.0)
       railties (>= 3.0.0)
     hike (1.2.2)
+    httparty (0.11.0)
+      multi_json (~> 1.0)
+      multi_xml (>= 0.5.2)
     i18n (0.6.1)
     journey (1.0.4)
     jquery-rails (2.2.1)
@@ -80,6 +89,7 @@ GEM
       treetop (~> 1.4.8)
     mime-types (1.23)
     multi_json (1.7.2)
+    multi_xml (0.5.3)
     nokogiri (1.5.9)
     orm_adapter (0.4.0)
     polyglot (0.3.3)
@@ -153,6 +163,7 @@ DEPENDENCIES
   coffee-rails (~> 3.2.1)
   database_cleaner (>= 1.0.0.RC1)
   devise (>= 2.2.3)
+  devise_capturable (= 0.0.1)!
   email_spec (>= 1.4.0)
   factory_girl_rails (>= 4.2.0)
   jquery-rails

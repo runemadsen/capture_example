@@ -9,45 +9,7 @@
     <%= csrf_meta_tags %>
     <%= yield(:head) %>
 
-    <!-- Add your own Capture event handlers. To see the full list, run the following in the browser console: janrain.events  -->
-    <script type="text/javascript">
-      function janrainCaptureWidgetOnLoad() {
-        janrain.settings.capture.flowName = 'signIn';
-        janrain.settings.language = 'en';
-        //janrain.settings.capture.stylesheets = ['styles/janrain.css'];
-        //janrain.settings.capture.mobileStylesheets = ['styles/janrain-mobile.css'];
-
-        janrain.capture.ui.start();
-        janrain.events.onCaptureLoginSuccess.addHandler(function(result){
-          janrain.capture.ui.modal.close();
-          console.log("onCaptureLoginSuccess")
-          console.log(result);
-        });
-
-        janrain.events.onCaptureSessionFound.addHandler(function(result){
-          janrain.capture.ui.modal.close();
-          console.log("onCaptureSessionFound")
-          console.log(result);
-        });
-
-        janrain.events.onCaptureRegistrationSuccess.addHandler(function(result){
-          janrain.capture.ui.modal.close();
-          console.log("onCaptureRegistrationSuccess")
-          console.log(result);
-        });
-
-        janrain.events.onCaptureSessionEnded.addHandler(function(result){
-          console.log("onCaptureSessionEnded")
-          console.log(result);
-        });
-      }
-    </script>
-
-    <!-- During the development process, the configuration code will be loaded from Janrain servers so that we can help you customize it. When your site is ready to go live, the following script tag will be replaced with your customized javascript and HTML markup to provide the fastest possible user experience.
-    <script src="http://pse.janrain.com/customer_dev/52b520fd87f7/scripts/index.js" id="janrainCaptureDevScript"></script>-->
-
     <script type="text/javascript" id="janrainCaptureDevScript">
-
       function janrainDefaultSettings() {
         if (typeof window.janrain !== 'object') window.janrain = {};
         window.janrain.settings = {
@@ -265,6 +227,7 @@
       '    </div>\n' + 
       '</div>');
       })();
+      
     </script>
 
   </head>
@@ -284,10 +247,10 @@
               <%= render 'layouts/messages' %>
               <%= yield %>
 
-              <%= form_tag user_session_path, :id => "session-form" do %>
-                <%= hidden_field_tag 'code', '' %>
+              <%= form_tag user_session_path, :method => :post, :id => "session-form" do %>
+                <%= hidden_field_tag 'code', '', :id => "authorization-code" %>
               <% end %>
-
+ 
             </div>
           </div>
           <footer>
