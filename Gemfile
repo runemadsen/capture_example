@@ -14,3 +14,4 @@ gem "email_spec", ">= 1.4.0", :group => :test
 gem "factory_girl_rails", ">= 4.2.0", :group => [:development, :test]
 gem "bootstrap-sass", ">= 2.3.0.0"
 gem "devise", ">= 2.2.3"
+gem 'devise-capturable', :git => 'git@github.com:runemadsen/devise-capturable.git'
