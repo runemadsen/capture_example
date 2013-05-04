@@ -27,11 +27,7 @@
             captureServer: 'https://oreilly.dev.janraincapture.com',
             clientId: '2r93653z2ajw2cvh3fzqvbg3pgkfb6mc',
             flowVersion: 'HEAD',
-            keepProfileCookieAfterLogout: true,
             modalCloseHtml: '<span class="janrain-icon-16 janrain-icon-ex2"></span>',
-            redirectUri : 'http://localhost',
-            responseType: 'code',
-            setProfileCookie: true,
             transactionTimeout: 10000,
             noModalBorderInlineCss: true
           }
@@ -246,11 +242,6 @@
             <div class="span12">
               <%= render 'layouts/messages' %>
               <%= yield %>
-
-              <%= form_tag user_session_path, :method => :post, :id => "session-form" do %>
-                <%= hidden_field_tag 'code', '', :id => "authorization-code" %>
-              <% end %>
- 
             </div>
           </div>
           <footer>
