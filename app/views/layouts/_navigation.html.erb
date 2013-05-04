@@ -1,12 +1,9 @@
 <%= link_to "Capture Example", root_path, :class => 'brand' %>
+
 <ul class="nav">
   <% if user_signed_in? %>
     <li><%= link_to 'Logout', destroy_user_session_path, :method=>'delete' %></li>
   <% else %>
-    <li>
-      <%#= link_to 'Login', new_user_session_path %>
-      <!-- this should be a rails helper -->
-      <a href="#" id="capture_signin_link" class="capture_modal_open">Sign In / Sign Up</a>
-    </li>
+    <li><%= link_to_capturable "Sign In / Sign Up" %></li>
   <% end %>
 </ul>
