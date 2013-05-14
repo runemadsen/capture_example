@@ -238,7 +238,7 @@ Devise.setup do |config|
   # so you need to do it manually. For the users scope, it would be:
   # config.omniauth_path_prefix = "/my_engine/users/auth"
 
-  config.capturable_endpoint = ENV["CAPTURABLE_ENDPOINT"]
+  config.capturable_server = ENV["CAPTURABLE_SERVER"]
   config.capturable_client_id = ENV["CAPTURABLE_CLIENT_ID"]
   config.capturable_client_secret = ENV["CAPTURABLE_CLIENT_SECRET"]
 
