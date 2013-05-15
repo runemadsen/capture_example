@@ -1,4 +1,12 @@
+<% if user_signed_in? %>
+
 <h3>Home</h3>
 <% @users.each do |user| %>
   <p>User: <%=link_to user.name, user %></p>
+<% end %>
+
+<% else %>
+
+You need to sign in!
+
 <% end %>
